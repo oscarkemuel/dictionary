@@ -1,8 +1,17 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
+import { Audio } from '../components/Audio'
+import { Words } from '../components/Words'
+
+import style from '../styles/home.module.scss';
+
 
 const Home: NextPage = () => {
   return (
-    <h1>Hello world</h1>
+    <main className={style.main}>
+      <Audio />
+
+      <Words />
+    </main>
   )
 }
 
