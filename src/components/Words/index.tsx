@@ -8,7 +8,7 @@ export function Words() {
 
   useEffect(() => {
     async function getData(){
-      const {data} = await api.get<string[]>(`/words?_page=${currentPage}&_limit=10`);
+      const {data} = await api.get<string[]>(`/words?_page=${currentPage}&_limit=20`);
 
       setWords((prev) => [...prev, ...data]);
     }
