@@ -4,4 +4,8 @@
   grid-template-columns: .6fr 1fr;
   padding: 2rem;
   gap: 2rem;
+
+  @media (max-width: 768px){
+    grid-template-columns: 1fr;
+  }
 }
