@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  max-width: 400px;
 }
 
 .display {
@@ -14,6 +13,7 @@
   margin-bottom: 1.5rem;
   background-color: var(--gray-300);
   box-shadow: var(--shadow);
+  border-radius: .2rem;
 
   p, span {
     font-size: 1.5rem;
@@ -36,11 +36,13 @@
     list-style: none;
 
     li {
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.4rem;
     }
   }
 
-  
+  p b {
+    text-decoration: underline;
+  }
 }
 
 .buttons {
