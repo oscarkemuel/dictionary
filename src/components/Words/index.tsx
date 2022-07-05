@@ -7,7 +7,6 @@ import style from './styles.module.scss';
 export function Words() {
   const { handleChangeWord, words, setWords } = useDictionary();
   const [currentPage, setCurrentPage] = useState(0);
-  const router = useRouter();
 
   useEffect(() => {
     async function getData(){
@@ -31,22 +30,12 @@ export function Words() {
     return () => intersectionObserver.disconnect();
   }, []);
 
-  function handlePressWord(word: string){
-    handleChangeWord(word)
-
-    router.replace({
-      query: {
-        word
-      }
-    })
-  }
-
   return (
     <div className={style.container}>
       <ul>
         {words.map((word, index) => (
           <li key={index}>
-            <button type='button' onClick={() => handlePressWord(word)}>
+            <button type='button' onClick={() => handleChangeWord(word)}>
               {word}
             </button>
           </li>

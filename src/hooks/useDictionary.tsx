@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
 import { apiDictionary } from '../services/api';
 
@@ -40,6 +41,7 @@ export function DictionaryProvider({ children }: DictionaryProviderProps) {
   const [words, setWords] = useState<string[]>([]);
   const [word, setWord] = useState({} as WordInterface);
   const [indexWord, setIndexWord] = useState(0);
+  const router = useRouter();
 
   function handleChangeWord(newWord: string){
     apiDictionary.get(newWord)
@@ -67,7 +69,14 @@ export function DictionaryProvider({ children }: DictionaryProviderProps) {
         setWord({word: `"${newWord}" not found`});
       }
     })
-    .finally(() => setIndexWord(words.indexOf(newWord)));
+    .finally(() => {
+      setIndexWord(words.indexOf(newWord));
+      router.replace({
+        query: {
+          word: newWord,
+        }
+      })
+    });
   }
 
   function changeWordIndex(index: number){
