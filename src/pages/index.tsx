@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Audio } from '../components/Audio'
+import { Tabs } from '../components/Tabs';
 import { Words } from '../components/Words'
 import { useDictionary } from '../hooks/useDictionary';
 
@@ -27,7 +28,10 @@ const Home: NextPage<Props> = () => {
     <main className={style.main}>
       <Audio />
 
-      <Words />
+      <div>
+        <Tabs />
+        <Words />
+      </div>
     </main>
   )
 }

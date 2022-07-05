@@ -3,7 +3,7 @@ import { Player } from "../Player";
 import style from "./style.module.scss";
 
 export function Audio() {
-  const { word, indexWord, handleNextWord, handlePreviousWord } =
+  const { word, indexWord, handleNextWord, handlePreviousWord, openTabName } =
     useDictionary();
 
   return (
@@ -42,7 +42,7 @@ export function Audio() {
             </ul>
           </div>
 
-          {indexWord !== -1 && (
+          {(indexWord !== -1 && openTabName === 'words') &&  (
             <div className={style.buttons}>
               <button type="button" onClick={() => handlePreviousWord()}>
                 Voltar

@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+
+  button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    background: var(--gray-300);
+
+    &:hover {
+      background: var(--gray-500);
+      color: var(--white);
+    }
+
+    &:first-child {
+      border-top-left-radius: 0.5rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: 0.5rem;
+    }
+  }
+}
+
+.active {
+  background-color: var(--blue) !important;
+  color: var(--white);
+}

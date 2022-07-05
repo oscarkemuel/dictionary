@@ -5,7 +5,7 @@ import { api } from '../../services/api';
 import style from './styles.module.scss';
 
 export function Words() {
-  const { handleChangeWord, words, setWords } = useDictionary();
+  const { handleChangeWord, words, setWords, wordHistory, openTabName } = useDictionary();
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function Words() {
       setWords((prev) => [...prev, ...data]);
     }
 
-    if(currentPage !== 0){
+    if(currentPage !== 0 && openTabName === 'words'){
       getData()
     }
   }, [currentPage])
@@ -30,10 +30,20 @@ export function Words() {
     return () => intersectionObserver.disconnect();
   }, []);
 
+  function getWordsToShow() {
+    if(openTabName === 'words'){
+      return words;
+    } else {
+      return wordHistory;
+    }
+  }
+
+  const wordsToShow = getWordsToShow();
+
   return (
     <div className={style.container}>
       <ul>
-        {words.map((word, index) => (
+        {wordsToShow.map((word, index) => (
           <li key={index}>
             <button type='button' onClick={() => handleChangeWord(word)}>
               {word}
