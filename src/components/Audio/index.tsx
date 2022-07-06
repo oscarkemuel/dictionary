@@ -1,10 +1,19 @@
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { useDictionary } from "../../hooks/useDictionary";
 import { Player } from "../Player";
+
 import style from "./style.module.scss";
 
 export function Audio() {
-  const { word, indexWord, handleNextWord, handlePreviousWord, openTabName } =
-    useDictionary();
+  const {
+    word,
+    indexWord,
+    handleNextWord,
+    handlePreviousWord,
+    openTabName,
+    wordFavorites,
+    handleToggleFavoriteWord,
+  } = useDictionary();
 
   return (
     <div className={style.container}>
@@ -19,7 +28,16 @@ export function Audio() {
       {word.word && (
         <>
           <div className={style.meanings}>
-            <h2>Meanings</h2>
+            <div className={style.headerMeanings}>
+              <h2>Meanings</h2>
+              <button type="button" onClick={() => handleToggleFavoriteWord(word.word)}>
+                {wordFavorites.includes(word.word) ? (
+                  <MdFavorite color="var(--red)" />
+                ) : (
+                  <MdFavoriteBorder color="var(--white)" />
+                )}
+              </button>
+            </div>
 
             <ul>
               {word.meanings?.map((meaning) => {
@@ -42,7 +60,7 @@ export function Audio() {
             </ul>
           </div>
 
-          {(indexWord !== -1 && openTabName === 'words') &&  (
+          {indexWord !== -1 && openTabName === "words" && (
             <div className={style.buttons}>
               <button type="button" onClick={() => handlePreviousWord()}>
                 Voltar

@@ -45,6 +45,27 @@
   }
 }
 
+.headerMeanings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    border: none;
+    background: transparent;
+
+    svg{
+      font-size: 2rem;
+    }
+
+    &:hover {
+      svg {
+        color: var(--red) !important;
+      }
+    }
+  }
+}
+
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;

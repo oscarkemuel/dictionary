@@ -9,6 +9,11 @@
     transition: all 0.2s ease-in-out;
     background: var(--gray-300);
 
+    &:nth-child(even){
+      border-right: 1px solid var(--gray-900);
+      border-left: 1px solid var(--gray-900);
+    }
+
     &:hover {
       background: var(--gray-500);
       color: var(--white);

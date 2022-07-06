@@ -28,14 +28,16 @@ interface DictionaryContextInterface {
   words: string[];
   setWords: Dispatch<SetStateAction<string[]>>;
   wordHistory: string[];
+  wordFavorites: string[];
   word: WordInterface;
-  handleChangeWord: (word: string) => void;
   indexWord: number;
   changeWordIndex: (index: number) => void;
+  handleChangeWord: (word: string) => void;
   handleNextWord: () => void;
   handlePreviousWord: () => void;
-  openTabName: 'words' | 'history';
-  handleTab: (tabName: 'words' | 'history') => void;
+  handleToggleFavoriteWord: (word: string) => void;
+  handleTab: (tabName: 'words' | 'history' | 'favorites') => void;
+  openTabName: 'words' | 'history' | 'favorites';
 }
 
 const DictionaryContext = createContext<DictionaryContextInterface>({} as DictionaryContextInterface);
@@ -43,18 +45,24 @@ const DictionaryContext = createContext<DictionaryContextInterface>({} as Dictio
 export function DictionaryProvider({ children }: DictionaryProviderProps) {
   const [words, setWords] = useState<string[]>([]);
   const [wordHistory, setWordHistory] = useState<string[]>([])
+  const [wordFavorites, setWordFavorites] = useState<string[]>([])
 
   const [word, setWord] = useState({} as WordInterface);
   const [indexWord, setIndexWord] = useState(0);
-  const [openTabName, setOpenTabName] = useState<'words' | 'history'>('words');
+  const [openTabName, setOpenTabName] = useState<'words' | 'history' | 'favorites'>('words');
 
   const router = useRouter();
 
   useEffect(() => {
     const storegedHistory = localStorage.getItem('@Dictionary/history');
+    const storegedFavorites = localStorage.getItem('@Dictionary/favorites');
 
     if(storegedHistory) {
       setWordHistory(JSON.parse(storegedHistory));
+    }
+
+    if(storegedFavorites) {
+      setWordFavorites(JSON.parse(storegedFavorites));
     }
   }, []);
 
@@ -66,6 +74,21 @@ export function DictionaryProvider({ children }: DictionaryProviderProps) {
       if(typeof window !== 'undefined'){
         localStorage.setItem('@Dictionary/history', JSON.stringify(newHistory));
       }
+    }
+  }
+
+  function handleToggleFavoriteWord(newWord: string) {
+    let newFavorites;
+
+    if(!wordFavorites.includes(newWord)){
+      newFavorites = [newWord, ...wordFavorites];
+    }else {
+      newFavorites = wordFavorites.filter(word => word !== newWord);
+    }
+
+    setWordFavorites(newFavorites);
+    if(typeof window !== 'undefined'){
+      localStorage.setItem('@Dictionary/favorites', JSON.stringify(newFavorites));
     }
   }
 
@@ -120,7 +143,7 @@ export function DictionaryProvider({ children }: DictionaryProviderProps) {
     changeWordIndex(indexWord - 1);
   }
 
-  function handleTab(tabName: 'words' | 'history'){
+  function handleTab(tabName: 'words' | 'history' | 'favorites'){
     setOpenTabName(tabName);
   }
 
@@ -129,14 +152,16 @@ export function DictionaryProvider({ children }: DictionaryProviderProps) {
       words,
       setWords,
       wordHistory,
+      wordFavorites,
       word,
       openTabName,
-      handleChangeWord,
       indexWord,
       changeWordIndex,
+      handleChangeWord,
       handleNextWord,
       handlePreviousWord,
-      handleTab
+      handleTab,
+      handleToggleFavoriteWord
     }}>
       {children}
     </DictionaryContext.Provider>

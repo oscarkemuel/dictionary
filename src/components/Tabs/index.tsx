@@ -21,6 +21,14 @@ export function Tabs() {
       >
         History
       </button>
+
+      <button
+        type="button"
+        onClick={() => handleTab("favorites")}
+        className={openTabName === "favorites" ? style.active : ""}
+      >
+        Favorites
+      </button>
     </div>
   );
 }

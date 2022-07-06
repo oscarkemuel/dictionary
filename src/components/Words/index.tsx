@@ -1,11 +1,10 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDictionary } from '../../hooks/useDictionary';
 import { api } from '../../services/api';
 import style from './styles.module.scss';
 
 export function Words() {
-  const { handleChangeWord, words, setWords, wordHistory, openTabName } = useDictionary();
+  const { handleChangeWord, words, setWords, wordHistory, wordFavorites, openTabName } = useDictionary();
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
@@ -33,8 +32,10 @@ export function Words() {
   function getWordsToShow() {
     if(openTabName === 'words'){
       return words;
-    } else {
+    } else if(openTabName === 'history'){
       return wordHistory;
+    } else {
+      return wordFavorites;
     }
   }
 
