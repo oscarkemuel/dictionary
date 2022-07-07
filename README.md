@@ -2,8 +2,8 @@
 
 > Dicionário de inglês que permite salvar palavras em cache, visualizar significado da palavra e sua fonética.
 
-<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="300px;" />
-<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="300px;" />
+<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="450px;" />
+<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="450px;" />
 
 ## 🚀 Instalando dictionary
 
