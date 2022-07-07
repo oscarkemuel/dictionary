@@ -2,8 +2,8 @@
 
 > Dicionário de inglês que permite salvar palavras em cache, visualizar significado da palavra e sua fonética.
 
-![Dicionário print1](https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png)
-![Dicionário print1](https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png)
+<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="300px;" />
+<img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="300px;" />
 
 ## 🚀 Instalando dictionary
 
@@ -13,15 +13,15 @@ Clone o projeto:
 2. Faça um clone desse repositório rodando: `git clone https://github.com/oscarkemuel/dictionary.git`;
 3. Entre na pasta rodando: `cd dictionary`;
 
-Sem Docker:
-4. Rode `yarn` ou `npm install` para instalar as dependências do projeto;
-5. Rode `yarn dev` ou `npm dev` para iniciar o front-end em modo de desenvolvimento.
-6. Rode `yarn server` ou `npm server` para iniciar o servidor fake.
-7. Acesse: `http://localhost:3000`
+Rodar Sem Docker:
+1. Rode `yarn` ou `npm install` para instalar as dependências do projeto;
+2. Rode `yarn dev` ou `npm dev` para iniciar o front-end em modo de desenvolvimento.
+3. Rode `yarn server` ou `npm server` para iniciar o servidor fake.
+4. Acesse: `http://localhost:3000`
 
 Com docker:
-4. Rode `docker-compose up -d --build`
-5. Acesse: `http://localhost:3000`
+1. Rode `docker-compose up -d --build`
+2. Acesse: `http://localhost:3000`
 
 Para rodar os testes:
 1. Rode `yarn test` ou `npm run test`
