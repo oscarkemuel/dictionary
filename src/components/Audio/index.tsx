@@ -62,11 +62,11 @@ export function Audio() {
 
           {indexWord !== -1 && openTabName === "words" && (
             <div className={style.buttons}>
-              <button type="button" onClick={() => handlePreviousWord()}>
-                Voltar
+              <button type="button" onClick={handlePreviousWord}>
+                Back
               </button>
               <button type="button" onClick={handleNextWord}>
-                Próximo
+                Next
               </button>
             </div>
           )}

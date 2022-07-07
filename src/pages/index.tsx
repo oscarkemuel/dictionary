@@ -14,7 +14,7 @@ interface Props {
 
 
 const Home: NextPage<Props> = () => {
-  const { word: wordSelected, handleChangeWord } = useDictionary();
+  const { handleChangeWord } = useDictionary();
   const router = useRouter();
   const { word } = router.query;
 

@@ -40,7 +40,7 @@ interface DictionaryContextInterface {
   openTabName: 'words' | 'history' | 'favorites';
 }
 
-const DictionaryContext = createContext<DictionaryContextInterface>({} as DictionaryContextInterface);
+export const DictionaryContext = createContext<DictionaryContextInterface>({} as DictionaryContextInterface);
 
 export function DictionaryProvider({ children }: DictionaryProviderProps) {
   const [words, setWords] = useState<string[]>([]);
