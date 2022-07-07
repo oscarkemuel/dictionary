@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  app:
+    image: dictionary
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  api-json:
+    image: clue/json-server
+    restart: always
+    volumes:
+    - ./datas/:/data/
+    ports:
+    - "8080:80"
