@@ -1,11 +1,10 @@
 # dictionary
 
 > Dicionário de inglês que permite salvar palavras em cache, visualizar significado da palavra e sua fonética.
+>  Vídeo de apresentação da aplicação em: [Apresentação](https://www.loom.com/share/02d2fe6464534f0ba979479207d8829a)
 
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="450px;" />
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="450px;" />
-
->  Apresentação da aplicação em: [Apresentação](https://www.loom.com/share/02d2fe6464534f0ba979479207d8829a)
 
 ## 🚀 Instalando dictionary
 
