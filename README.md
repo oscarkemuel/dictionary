@@ -5,6 +5,8 @@
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="450px;" />
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="450px;" />
 
+Apresentação da aplicação: <a href="https://www.loom.com/share/02d2fe6464534f0ba979479207d8829a">APRESENTAÇÃO</a>
+
 ## 🚀 Instalando dictionary
 
 Clone o projeto:
