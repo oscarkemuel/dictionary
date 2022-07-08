@@ -5,7 +5,7 @@
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print1.png" width="450px;" />
 <img src="https://raw.githubusercontent.com/oscarkemuel/dictionary/main/src/assets/prints/print2.png" width="450px;" />
 
-Apresentação da aplicação: <a href="https://www.loom.com/share/02d2fe6464534f0ba979479207d8829a">APRESENTAÇÃO</a>
+>  Apresentação da aplicação em: [Apresentação](https://www.loom.com/share/02d2fe6464534f0ba979479207d8829a)
 
 ## 🚀 Instalando dictionary
 
@@ -17,8 +17,8 @@ Clone o projeto:
 
 Rodar Sem Docker:
 1. Rode `yarn` ou `npm install` para instalar as dependências do projeto;
-2. Rode `yarn dev` ou `npm dev` para iniciar o front-end em modo de desenvolvimento.
-3. Rode `yarn server` ou `npm server` para iniciar o servidor fake.
+2. Rode `yarn dev` ou `npm run dev` para iniciar o front-end em modo de desenvolvimento.
+3. Rode `yarn server` ou `npm run server` para iniciar o servidor fake.
 4. Acesse: `http://localhost:3000`
 
 Com docker:
